@@ -1,0 +1,269 @@
+I'll help create HTML code for the website concept we developed for BayAreaCorporatePhoto.com, a corporate event photography business targeting clients in the Bay Area, San Francisco, and Silicon Valley. Since I can’t directly generate or host a live website, I’ll provide the HTML code (along with basic CSS for styling) that you can use to build the site. The code will reflect the structure and content outlined earlier—Homepage, Portfolio, Services, About, Testimonials, Contact, and Store pages—while incorporating elements typical of a corporate photography media kit (e.g., portfolio, testimonials) and aligning with the professional aesthetic needed for corporate clients like universities and banks. I’ll keep the design simple and functional, focusing on a single HTML file with CSS for styling, which you can expand into separate pages later using a website builder like Squarespace or a hosting service.
+HTML Code for BayAreaCorporatePhoto.com
+Below is the HTML code for the website, including inline CSS for styling. This code creates a single-page website with sections for each page type (Homepage, Portfolio, Services, etc.), which you can later split into separate HTML files if desired. I’ve included comments to explain each section, and the design prioritizes a clean, professional look suitable for corporate clients.
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="High-end corporate event photography in the Bay Area, specializing in galas, conferences, and client dinners.">
+    <meta name="keywords" content="Bay Area corporate event photographer, San Francisco gala photography, Silicon Valley client dinner photographer">
+    <meta name="author" content="Bay Area Corporate Photo">
+    <title>Bay Area Corporate Photo - High-End Event Photography</title>
+    <style>
+        /* Basic CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1a2a44; /* Navy blue */
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            float: left;
+        }
+
+        nav ul {
+            float: right;
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700; /* Gold accent */
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            background: url('https://via.placeholder.com/1920x1080?text=Corporate+Event+Photo') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        #hero .cta {
+            background-color: #ffd700;
+            color: #1a2a44;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        #hero .cta:hover {
+            background-color: #e6c200;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1a2a44;
+        }
+
+        /* Portfolio Section */
+        #portfolio .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        #portfolio .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        #portfolio .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        #services .service {
+            margin-bottom: 2rem;
+        }
+
+        #services .service h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1a2a44;
+        }
+
+        /* About Section */
+        #about img {
+            width: 200px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 1rem;
+        }
+
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Testimonials Section */
+        #testimonials .testimonial {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        #testimonials .testimonial p {
+            font-style: italic;
+        }
+
+        #testimonials .testimonial cite {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #1a2a44;
+        }
+
+        /* Contact Section */
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #contact label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contact button {
+            background-color: #1a2a44;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contact button:hover {
+            background-color: #0f1c2e;
+        }
+
+        #contact .social-links {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        #contact .social-links a {
+            margin: 0 1rem;
+            color: #1a2a44;
+            text-decoration: none;
+        }
+
+        #contact .social-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Store Section */
+        #store .product {
+            display: inline-block;
+            width: 30%;
+            margin: 1.5%;
+            text-align: center;
+        }
+
+        #store .product img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        #store .product h3 {
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        #store .product p {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a2a44;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #e6c200;
+        }
+    </style>
+</...
